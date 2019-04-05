@@ -30,6 +30,7 @@ public class SqlitesecureApplication implements CommandLineRunner {
 
 			ResultSet rs = statement.executeQuery("select * from person");
 
+			System.out.println("Created database file successfully, print all the test data.");
 			while(rs.next()) {
 				System.out.println("name = " + rs.getString("name"));
 				System.out.println("id = " + rs.getInt("id"));
