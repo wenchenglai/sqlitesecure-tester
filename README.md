@@ -9,6 +9,9 @@ This is SQLite JDBC Driver with Encryption Tester to demonstrate how to
 
 ### Run the tester
 
+First, you must generate the right JDBC driver (jar file for Linux, dll for Windows),
+and put them inside the project's /libs folder.  Create libs folder if not there.
+
 In Linux:
 ```./gradlew bootRun```
 
