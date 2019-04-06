@@ -54,26 +54,21 @@ public class SqlitesecureApplicationTests {
 			statement.execute("create table newtarget.blobTable as SELECT * FROM blobTable;");
 			statement.execute("DETACH DATABASE newtarget;");
 			statement.close();
-		}
-		catch(SQLException e)
-		{
+		} catch(SQLException e) {
 			// if the error message is "out of memory",
 			// it probably means no database file is found
 			System.err.println(e.getMessage());
 		}
-		finally
-		{
-			try
-			{
+		finally {
+			try {
 				if(connection != null)
 					connection.close();
-			}
-			catch(SQLException e)
-			{
+			} catch(SQLException e) {
 				// connection close failed.
 				System.err.println(e.getMessage());
 			}
 		}
+
 		Instant finish = Instant.now();
 		long timeElapsed = Duration.between(start, finish).toMillis();
 		System.out.println("Time elapsed: " + timeElapsed + " ms to generate " + targetDbName);
